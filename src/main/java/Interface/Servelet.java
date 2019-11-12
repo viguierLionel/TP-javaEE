@@ -10,6 +10,8 @@ import DAO.DAO;
 import DAO.DataSourceFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,10 +58,10 @@ public class Servelet extends HttpServlet {
                 if (code == null) {
                     throw new Exception("Client inconnu");
                 }
-                // Afficher les propriétés du client         
+                // Afficher les propriétés du client
                 out.printf("Customer n° %d <br> name: %s <br> address: %s",
-                    codeID,
-                    code.getTaux());
+                        codeID,
+                        code.getTaux());
             } catch (Exception e) {
                 out.printf("Erreur : %s", e.getMessage());
             }
